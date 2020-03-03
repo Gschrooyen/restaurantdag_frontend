@@ -10,7 +10,7 @@
   "scripts": {
     "lint": "eslint --ext .js,.vue src",
     "test": "echo \"No test specified\" && exit 0",
-    "start": "npm install -g @quasar/cli && quasar serve"
+    "start": "npm install -g @quasar/cli && quasar serve -p 8080"
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",
