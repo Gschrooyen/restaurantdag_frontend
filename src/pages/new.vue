@@ -11,7 +11,9 @@
           </q-icon>
         </template>
       </q-input>
-      <GerechtInput v-for="(ger, index) in restaurantdag.gerechten" :key="index" :gerecht="ger" :options="types"></GerechtInput>
+      <div class="flex">
+        <GerechtInput v-for="(ger, index) in restaurantdag.gerechten" :key="index" :gerecht="ger" :options="types"></GerechtInput>
+      </div>
       <q-btn size="md" color="green" icon="add" @click="addGerecht"></q-btn>
     </q-form>
   </q-page>
