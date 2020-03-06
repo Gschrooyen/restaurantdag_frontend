@@ -19,7 +19,7 @@
       </q-item>
       <q-separator />
       <q-card-section>
-        <q-btn align="between" color="green" @click="$router.push('/current')" label="ga naar de volgende restaurantdag" icon="next_week" />
+        <q-btn :disabled="none" align="between" color="green" @click="$router.push('/current')" label="ga naar de volgende restaurantdag" icon="next_week" />
       </q-card-section>
     </q-card>
   </q-page>
@@ -27,6 +27,24 @@
 
 <script>
 export default {
-  name: 'PageIndex'
+  name: 'PageIndex',
+  data: function () {
+    return {
+      none: true
+    }
+  },
+  created () {
+    const self = this
+    this.$store.dispatch('restaurantdag/getNextRestaurantDag')
+      .then(result => { if (result.status === 200) { self.none = false } })
+      .catch(e => console.log(e))
+  }
 }
 </script>
+
+<style scoped>
+  .q-card {
+    margin: 20px;
+    background-color: ghostwhite;
+  }
+</style>

@@ -6,5 +6,10 @@ export function someAction (context) {
 */
 
 export function saveRestaurantdag ({ commit }, restaurantdag) {
-  Axios.post(getlink() + '/restaurantdag/save', restaurantdag)
+  console.log(restaurantdag)
+  return Axios.post(getlink() + 'restaurantdag/new', restaurantdag)
+}
+
+export function getNextRestaurantDag ({ commit }) {
+  return Axios.get(getlink() + 'restaurantdag/next')
 }

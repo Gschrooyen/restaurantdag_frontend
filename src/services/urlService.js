@@ -1,7 +1,7 @@
 export function getlink () {
   if (process.env.DEV) {
-    return 'localhost:8090/'
+    return 'http://localhost:8070/'
   } else {
-    return 'restaurantdag.herokuapp.com/'
+    return 'https://restaurantdag.herokuapp.com/'
   }
 }

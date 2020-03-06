@@ -9,6 +9,9 @@
                :rules="[ val => (val.length > 0 && !isNaN(val) && val >= 0.0) || 'vul een getal in boven de 0' ]"></q-input>
       <q-checkbox v-if="gerecht.type === 'hoofdgerecht'" v-model="gerecht.kindergerecht" label="kindergerecht"
                   color="green"/>
+      <div>
+        <q-btn size="md" color="red" @click="$emit('remove')" icon="close"></q-btn>
+      </div>
     </q-card>
   </div>
 </template>
