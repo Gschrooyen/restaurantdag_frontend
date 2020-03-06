@@ -37,7 +37,7 @@ export default {
     const self = this
     this.$store.dispatch('restaurantdag/getNextRestaurantDag')
       .then(result => { if (result.status === 200) { self.none = false } })
-      .catch(e => console.log(e))
+      .catch(e => console.log('no restaurantdag found yet'))
   }
 }
 </script>
