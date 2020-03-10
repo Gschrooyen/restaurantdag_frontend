@@ -19,7 +19,14 @@
       </q-item>
       <q-separator />
       <q-card-section>
-        <q-btn :disabled="none" align="between" color="green" @click="$router.push('/current')" label="ga naar de volgende restaurantdag" icon="next_week" />
+        <div class="flex flex-center column">
+          <div class="col">
+            <q-btn :disabled="none" align="between" color="green" @click="$router.push('/current')" label="ga naar de volgende restaurantdag" icon="next_week" />
+          </div>
+          <div class="col">
+            <q-btn :disabled="none" align="between" color="primary" @click="$router.push('/current/inschrijven')" label="voeg inschrijvingen toe" icon="add"></q-btn>
+          </div>
+        </div>
       </q-card-section>
     </q-card>
   </q-page>
@@ -46,5 +53,9 @@ export default {
   .q-card {
     margin: 20px;
     background-color: ghostwhite;
+  }
+
+  .q-btn {
+    margin-top: 15px;
   }
 </style>
