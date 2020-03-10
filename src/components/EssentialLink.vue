@@ -3,7 +3,7 @@
     clickable
     tag="a"
     target="_blank"
-    :href="link"
+    @click="navigate"
   >
     <q-item-section
       v-if="icon"
@@ -35,14 +35,21 @@ export default {
       default: ''
     },
 
-    link: {
-      type: String,
-      default: '#'
-    },
-
     icon: {
       type: String,
       default: ''
+    },
+
+    link: {
+      type: String,
+      required: true
+    }
+  },
+  methods: {
+    navigate: function () {
+      if (this.$router.history.current.path !== this.link) {
+        this.$router.push(this.link)
+      }
     }
   }
 }

@@ -65,7 +65,7 @@ export default {
 function currentdate () {
   const datum = new Date()
   let day = 0
-  if ((datum.getDate() + 1) < 10) {
+  if ((datum.getDate()) < 10) {
     day = '0' + (datum.getDate())
   } else {
     day = (datum.getDate())

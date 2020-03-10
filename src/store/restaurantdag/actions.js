@@ -13,3 +13,7 @@ export function saveRestaurantdag ({ commit }, restaurantdag) {
 export function getNextRestaurantDag ({ commit }) {
   return Axios.get(getlink() + 'restaurantdag/next')
 }
+
+export function loadNextRestaurantDag ({ commit }) {
+  Axios.get(getlink() + 'restaurantdag/next').then(result => commit('setCurrent', result.data))
+}
