@@ -10,3 +10,7 @@ export function getCurrent (state) {
 export function getAll (state) {
   return state.all
 }
+
+export function getRequested (state) {
+  return state.requested
+}

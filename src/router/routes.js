@@ -6,10 +6,11 @@ const routes = [
     children: [
       { path: '', component: () => import('pages/Index.vue') },
       { path: '/new', component: () => import('pages/new.vue') },
-      { path: '/current', component: () => import('pages/current.vue') },
       { path: '/overzicht', component: () => import('pages/overzicht.vue') },
-      { path: '/bewerken', component: () => import('pages/bewerken.vue') },
-      { path: '/:id/inschrijvingen', component: () => import('pages/inschrijvingen.vue'), props: true }
+      { path: '/overzicht/:id', component: () => import('pages/restaurantdagDetail.vue'), props: true },
+      { path: '/bewerken/:id', component: () => import('pages/bewerken.vue'), props: true },
+      { path: '/:id/inschrijvingen', component: () => import('pages/inschrijvingen.vue'), props: true },
+      { path: '/current/inschrijven', component: () => import('pages/newInschrijving.vue') }
     ]
   }
 ]

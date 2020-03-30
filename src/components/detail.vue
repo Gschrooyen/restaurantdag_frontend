@@ -1,5 +1,5 @@
 <template>
-  <q-page padding>
+  <div>
     <h2>{{ restaurantdag.naam }}<h4>{{ restaurantdag.inschrijvingen }} inschrijvingen</h4></h2>
     <template>
       <div class="q-pa-md">
@@ -12,14 +12,14 @@
         />
       </div>
     </template>
-    <q-btn label="bewerken" icon="edit" color="primary"></q-btn>
-    <q-btn label="inschrijvingen" icon="add" color="primary"></q-btn>
-  </q-page>
+    <q-btn label="bewerken" @click="$emit('edit')" icon="edit" color="primary"></q-btn>
+    <q-btn label="inschrijvingen" @click="$emit('enrolments')" icon="add" color="primary"></q-btn>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'current',
+  name: 'RestaurantdagDetail',
   data: function () {
     return {
       columns: [
@@ -31,14 +31,7 @@ export default {
       pagination: { rowsPerPage: 10 }
     }
   },
-  created () {
-    this.$store.dispatch('restaurantdag/loadNextRestaurantDag')
-  },
-  computed: {
-    restaurantdag: function () {
-      return this.$store.getters['restaurantdag/getCurrent']
-    }
-  }
+  props: ['restaurantdag']
 }
 </script>
 

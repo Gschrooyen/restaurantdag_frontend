@@ -10,3 +10,7 @@ export function setCurrent (state, restaurantdag) {
 export function setAll (state, list) {
   state.all = list
 }
+
+export function setRequested (state, restaurantdag) {
+  state.requested = restaurantdag
+}

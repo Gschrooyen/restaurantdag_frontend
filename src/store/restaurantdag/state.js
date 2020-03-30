@@ -1,6 +1,7 @@
 export default function () {
   return {
     current: {},
-    all: []
+    all: [],
+    requested: {}
   }
 }

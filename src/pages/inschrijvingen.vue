@@ -15,7 +15,7 @@ export default {
   props: {
     id: {
       type: String,
-      default: 'current'
+      default: 'restaurantdagDetail.vue'
     }
   },
   watch: {
