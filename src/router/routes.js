@@ -10,7 +10,8 @@ const routes = [
       { path: '/overzicht/:id', component: () => import('pages/restaurantdagDetail.vue'), props: true },
       { path: '/bewerken/:id', component: () => import('pages/bewerken.vue'), props: true },
       { path: '/:id/inschrijvingen', component: () => import('pages/inschrijvingen.vue'), props: true },
-      { path: '/current/inschrijven', component: () => import('pages/newInschrijving.vue') }
+      { path: '/:id/inschrijvingen/new', component: () => import('pages/newInschrijving.vue'), props: true },
+      { path: '/:id/inschrijvingen/:inschrID', component: () => import('pages/bewerkInschrijving.vue'), props: true }
     ]
   }
 ]

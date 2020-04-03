@@ -1,5 +1,5 @@
 <template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
-  <Restaurantdag @submit="saveRestaurantdag" :restaurantdag="restaurantdag"></Restaurantdag>
+  <Restaurantdag @submit="saveRestaurantdag" @reset="reset" :restaurantdag="restaurantdag"></Restaurantdag>
 </template>
 
 <script>
@@ -28,6 +28,16 @@ export default {
         .then(result => {
           self.$router.push('/')
         })
+    },
+    reset: function () {
+      this.restaurantdag.naam = ''
+      this.restaurantdag.datum = currentdate()
+      this.restaurantdag.gerechten = [{
+        naam: '',
+        prijs: 0.0,
+        kindergerecht: false,
+        type: 'hoofdgerecht'
+      }]
     }
   },
   computed: {

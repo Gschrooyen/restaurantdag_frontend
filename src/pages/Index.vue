@@ -14,17 +14,17 @@
     <q-card class="my-card" flat bordered>
       <q-item>
         <q-item-section>
-          <q-item-label>ga naar volgende restaurantdag</q-item-label>
+          <q-item-label>ga naar huidige restaurantdag</q-item-label>
         </q-item-section>
       </q-item>
       <q-separator />
       <q-card-section>
         <div class="flex flex-center column">
           <div class="col">
-            <q-btn :disabled="none" align="between" color="green" @click="$router.push('/current')" label="ga naar de volgende restaurantdag" icon="next_week" />
+            <q-btn :disabled="none" align="between" color="green" @click="$router.push('/overzicht/current')" label="ga naar de huidige restaurantdag" icon="next_week" />
           </div>
           <div class="col">
-            <q-btn :disabled="none" align="between" color="primary" @click="$router.push('/current/inschrijven')" label="voeg inschrijvingen toe" icon="add"></q-btn>
+            <q-btn :disabled="none" align="between" color="primary" @click="$router.push('/current/inschrijvingen')" label="inschrijvingen" icon="list"></q-btn>
           </div>
         </div>
       </q-card-section>

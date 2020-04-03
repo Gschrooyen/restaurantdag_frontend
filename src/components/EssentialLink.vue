@@ -47,7 +47,7 @@ export default {
   },
   methods: {
     navigate: function () {
-      if (this.$router.history.restaurantdagDetail.path !== this.link) {
+      if (this.$router.history.current.path !== this.link) {
         this.$router.push(this.link)
       }
     }

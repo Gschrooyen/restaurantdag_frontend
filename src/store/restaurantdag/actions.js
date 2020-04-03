@@ -33,3 +33,19 @@ export function getInschrijvingen ({ commit }, id) {
 export function loadRestaurantdagById ({ commit }, id) {
   Axios.get(getlink() + 'restaurantdag/' + id).then(result => commit('setRequested', result.data)).catch(() => commit('setRequested', {}))
 }
+
+export function updateRestaurantdag ({ commit }, restaurantdag) {
+  return Axios.put(getlink() + 'restaurantdag/update', restaurantdag)
+}
+
+export function del ({ commit }, id) {
+  return Axios.delete(getlink() + 'restaurantdag/delete/' + id)
+}
+
+export function setupBestelling ({ commit }, id) {
+  return Axios.get(getlink() + 'restaurantdag/setupBestelling/' + id)
+}
+
+export function inschrijven ({ commit }, { inschrijving, rid }) {
+  Axios.post(getlink() + 'restaurantdag/newInschrijving/' + rid, inschrijving)
+}

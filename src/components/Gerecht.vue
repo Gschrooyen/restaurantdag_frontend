@@ -6,7 +6,7 @@
                :rules="[ val => val.length > 0 || 'Vul Aub. een naam in' ]"></q-input>
       <q-input filled v-model="gerecht.prijs" v-if="gerecht.type === 'hoofdgerecht'" type="text" @input="change($event)"
                lazy-rules label="prijs"
-               :rules="[ val => (val.length > 0 && !isNaN(val) && val >= 0.0) || 'vul een getal in boven de 0' ]"></q-input>
+               :rules="[ val => (!isNaN(val)) || 'vul een getal in', val => (val >= 0.0) || 'vul een getal in boven de 0', val => ((val + '').length > 0) || 'vul een waarde in' ]" suffix="€"></q-input>
       <q-checkbox v-if="gerecht.type === 'hoofdgerecht'" v-model="gerecht.kindergerecht" label="kindergerecht"
                   color="green"/>
       <div>

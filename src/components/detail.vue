@@ -13,7 +13,8 @@
       </div>
     </template>
     <q-btn label="bewerken" @click="$emit('edit')" icon="edit" color="primary"></q-btn>
-    <q-btn label="inschrijvingen" @click="$emit('enrolments')" icon="add" color="primary"></q-btn>
+    <q-btn label="inschrijvingen" @click="$emit('enrolments')" icon="list" color="primary"></q-btn>
+    <q-btn label="verwijderen" icon="delete" color="red" @click="$emit('delete')"></q-btn>
   </div>
 </template>
 
@@ -24,7 +25,7 @@ export default {
     return {
       columns: [
         { name: 'naam', required: 'true', label: 'naam', align: 'center', field: row => row.naam, sortable: false },
-        { name: 'prijs', required: 'false', label: 'prijs', align: 'center', field: row => row.prijs, sortable: true },
+        { name: 'prijs', required: 'false', label: 'prijs', align: 'center', field: row => row.prijs, sortable: true, format: (val, row) => (val !== null) ? `${val}€` : '/' },
         { name: 'type', required: 'true', label: 'type', align: 'center', field: row => row.type, sortable: true },
         { name: 'kindergerecht', required: 'false', label: 'kindergerecht', align: 'center', field: row => row.kindergerecht, sortable: true, format: val => { if (val) { return 'ja' } else if (val === false) { return 'nee' } else { return '' } } }
       ],

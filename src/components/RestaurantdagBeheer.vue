@@ -18,7 +18,7 @@
       </div>
       <q-btn size="md" color="green" icon="add" @click="addGerecht"></q-btn>
       <div>
-        <q-btn type="submit" color="blue">aanmaken</q-btn>
+        <q-btn type="submit" color="blue">opslaan</q-btn>
         <q-btn type="reset" color="red">reset</q-btn>
       </div>
     </q-form>
@@ -47,36 +47,12 @@ export default {
       this.$emit('submit')
     },
     onReset: function () {
-      this.restaurantdag.naam = ''
-      this.restaurantdag.datum = currentdate()
-      this.restaurantdag.gerechten = [{
-        naam: '',
-        prijs: 0.0,
-        kindergerecht: false,
-        type: 'hoofdgerecht'
-      }]
+      this.$emit('reset')
     },
     onRemove: function (i) {
       this.restaurantdag.gerechten.splice(i, 1)
     }
   }
-}
-
-function currentdate () {
-  const datum = new Date()
-  let day = 0
-  if ((datum.getDate()) < 10) {
-    day = '0' + (datum.getDate())
-  } else {
-    day = (datum.getDate())
-  }
-  let month = 0
-  if ((datum.getMonth() + 1) < 10) {
-    month = '0' + (datum.getMonth() + 1)
-  } else {
-    month = (datum.getMonth() + 1)
-  }
-  return day + '/' + month + '/' + datum.getFullYear()
 }
 </script>
 
