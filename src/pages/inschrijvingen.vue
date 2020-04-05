@@ -50,7 +50,8 @@ export default {
         { name: 'naam', required: true, label: 'naam', align: 'center', field: row => row.naam, sortable: false },
         { name: 'groep', label: 'groep', required: true, align: 'center', field: row => row.groep, sortable: true },
         { name: 'tijdstip', label: 'tijdstip', required: true, align: 'center', field: row => row.tijdstip, sortable: true },
-        { name: 'personen', label: '#personen', required: true, align: 'center', field: row => row.personen, sortable: true }
+        { name: 'volwassenen', label: '#volwassenen', required: true, align: 'center', field: row => row.volwassenen, sortable: true },
+        { name: 'kinderen', label: '#kinderen', required: true, align: 'center', field: row => row.kinderen, sortable: true }
       ],
       selected: [],
       pagination: { rowsPerPage: 15, sortBy: 'tijdstip', descending: false },
